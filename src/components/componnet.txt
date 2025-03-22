@@ -1,0 +1,1 @@
+folder related to pages and there components
