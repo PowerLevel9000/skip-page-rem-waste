@@ -1,4 +1,6 @@
 import { useSelector } from 'react-redux';
+import dumpyard from './static/dumpyard.jpg';
+import greenVector from './static/green-vector.jpg';
 import './App.scss';
 
 function App() {
@@ -7,6 +9,8 @@ function App() {
     <>
       <pre>{JSON.stringify(skipData)}</pre>
       <pre>{JSON.stringify(selectedSkip)}</pre>
+      <img src={greenVector} alt="green-vector" />
+      <img src={dumpyard} alt="dumpyard" />
     </>
   );
 }
