@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 // import dumpyard from './static/dumpyard.jpg';
 // import greenVector from './static/green-vector.jpg';
 import './App.scss';
-import SkipCard from './components/SkipCard';
+import SkipCard from './components/skip-card/SkipCard';
 
 function App() {
   const { skipData, selectedSkip } = useSelector((state) => state.skipData);
@@ -18,8 +18,17 @@ function App() {
         <SkipCard
           key={skip.id}
           id={skip.id}
+          size={skip.size}
+          periodDays={skip.hire_period_days}
+          priceBeforeVat={skip.price_before_vat}
+          vat={skip.vat}
           area={skip.area}
-          description={skip.description}
+          postcode={skip.postcode}
+          transportCost={skip.transport_cost}
+          perTonneCost={skip.per_tonne_cost}
+          forbidden={skip.forbidden}
+          heavyWaste={skip.allows_heavy_waste}
+          onRoad={skip.allowed_on_road}
         />
       ))}
     </>
