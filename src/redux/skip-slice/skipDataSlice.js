@@ -5,14 +5,22 @@ const skipDataSlice = createSlice({
   name: 'skipData',
   initialState: {
     skipData: data,
-    SelectedSkip: null,
+    selectedSkip: null,
+    modelDetail: null,
+    themeStyleGird: true,
   },
   reducers: {
     setSelectedSkip: (state, action) => {
-      state.SelectedSkip = action.payload;
+      state.selectedSkip = action.payload;
+    },
+    setModelDetail: (state, action) => {
+      state.modelDetail = action.payload;
+    },
+    toggleThemeStyleGird: (state) => {
+      state.themeStyleGird = !state.themeStyleGird;
     },
   },
 });
 
-export const { setSelectedSkip } = skipDataSlice.actions;
+export const { setSelectedSkip, setModelDetail, toggleThemeStyleGird } = skipDataSlice.actions;
 export default skipDataSlice.reducer;

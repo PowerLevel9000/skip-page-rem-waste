@@ -1,0 +1,70 @@
+@import '../../index.scss';
+
+.skip-card {
+    @include flex-column;
+    @include border-card;
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    position: relative;
+
+    .info {
+        @include flex-column;
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        span {
+            @include border-card(.8rem);
+            background-color: rgba($primary-color-lighter, 0.6);
+            padding: 5px;
+        }
+    }
+
+    .card-t {
+        @include flex-row;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: $black-lighter;
+    }
+
+    &:hover,
+    .selected {
+        box-shadow: -10px 10px 10px rgba(255, 255, 255, 0.2);
+        border: 1px solid $primary-color;
+
+        h2 {
+            color: $primary-color;
+        }
+
+        image {
+            transform: scale(1.1);
+        }
+
+        transform: scale(1.005);
+    }
+
+    ul {
+        padding: 10px 0;
+        li {
+            @include flex-row;
+            justify-content: space-between;
+            padding: 5px;
+            border-bottom: 1px solid $black-lighter;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+    .buttons {
+        @include flex-row;
+        justify-content: space-between;
+        background-color: grey;
+        padding: 10px;
+        button:nth-child(1) {
+            @include button-styles($black-lighter);
+        }
+        button:nth-child(2) {
+            @include button-styles($primary-color);
+        }
+    }
+}

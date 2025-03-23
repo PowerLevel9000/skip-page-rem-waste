@@ -1,5 +1,8 @@
-import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { setSelectedSkip, setModelDetail } from '../../redux/skip-slice/skipDataSlice';
+import yard from '../../static/dumpyard.jpg';
+import './style.scss';
 
 const SkipCard = ({
   id,
@@ -7,58 +10,79 @@ const SkipCard = ({
   periodDays,
   priceBeforeVat,
   vat,
-  postcode,
   transportCost,
   perTonneCost,
-  forbidden,
-  heavyWaste,
-  onRoad,
-  area,
-}) => (
-  <div data-testid={id} key={id}>
-    <h2>
-      {size}
-      {' '}
-      Yard
-    </h2>
-    <p>
-      {periodDays}
-      {' '}
-      Days
-    </p>
-    <p>
-      {priceBeforeVat}
-      £
-    </p>
-    <p>
-      {vat}
-    </p>
-    <p>{area}</p>
-    <div>
-      <p>{postcode}</p>
-      <p>{transportCost}</p>
-      <p>{perTonneCost}</p>
-      <p>{forbidden}</p>
-      <p>{heavyWaste}</p>
-      <p>{onRoad}</p>
+}) => {
+  const selected = useSelector((state) => state.skipData.selectedSkip);
+  const dispatch = useDispatch();
+  return (
+    <div data-testid={id} key={id} className="skip-card">
+      <img src={yard} alt="yard" />
+      <div className="info">
+        <span>
+          {size}
+          {' '}
+          Yard
+        </span>
+      </div>
+
+      <div className="card-t">
+        <h2>
+          {size}
+          {' '}
+          Yard
+        </h2>
+        <span>
+          {periodDays}
+          {' '}
+          Days
+        </span>
+      </div>
+
+      <ul>
+        <li>
+          price
+          <span>
+            {priceBeforeVat}
+            £
+          </span>
+        </li>
+        <li>
+          VAT
+          <span>
+            {vat}
+            %
+          </span>
+        </li>
+        {transportCost > 0 && (
+          <li>
+            Transport Cost
+            <span>{transportCost}</span>
+          </li>
+        )}
+        {perTonneCost > 0 && (
+          <li>
+            Per Tonne Cost
+            <span>{perTonneCost}</span>
+          </li>
+        )}
+      </ul>
+      <div className="buttons">
+        <button type="button" onClick={() => dispatch(setModelDetail(id))}>Details</button>
+        <button type="button" onClick={() => dispatch(setSelectedSkip(id))}>{selected === id ? 'selected' : 'select'}</button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 SkipCard.propTypes = {
   id: PropTypes.number.isRequired,
-  area: PropTypes.string.isRequired,
-  // description: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired,
   periodDays: PropTypes.number.isRequired,
   priceBeforeVat: PropTypes.number.isRequired,
   vat: PropTypes.number.isRequired,
-  postcode: PropTypes.string.isRequired,
   transportCost: PropTypes.number,
   perTonneCost: PropTypes.number,
-  forbidden: PropTypes.bool.isRequired,
-  heavyWaste: PropTypes.bool.isRequired,
-  onRoad: PropTypes.bool.isRequired,
 };
 
 SkipCard.defaultProps = {
