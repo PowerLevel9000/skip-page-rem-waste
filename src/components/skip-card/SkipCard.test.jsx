@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import configureMockStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
 import { data } from '../../utils/data';
 import SkipCard from './SkipCard';
-import { Provider } from 'react-redux';
 
 describe('SkipCard', () => {
   const mockStore = configureMockStore();
@@ -16,7 +16,8 @@ describe('SkipCard', () => {
     });
     render(
       <Provider store={store}>
-        <SkipCard key={data[data.length - 1].id}
+        <SkipCard
+          key={data[data.length - 1].id}
           id={data[data.length - 1].id}
           size={data[data.length - 1].size}
           periodDays={data[data.length - 1].hire_period_days}
@@ -30,7 +31,7 @@ describe('SkipCard', () => {
           heavyWaste={data[data.length - 1].allows_heavy_waste}
           onRoad={data[data.length - 1].allowed_on_road}
         />
-      </Provider>
+      </Provider>,
     );
   });
   it('renders SkipCard component', () => {
@@ -42,7 +43,6 @@ describe('SkipCard', () => {
     expect(price).toBeInTheDocument();
   });
 });
-
 
 describe('Details modal dispatch id and Selected Model dispatch id', () => {
   const mockStore = configureMockStore();
@@ -59,7 +59,8 @@ describe('Details modal dispatch id and Selected Model dispatch id', () => {
 
     render(
       <Provider store={store}>
-        <SkipCard key={data[data.length - 1].id}
+        <SkipCard
+          key={data[data.length - 1].id}
           id={data[data.length - 1].id}
           size={data[data.length - 1].size}
           periodDays={data[data.length - 1].hire_period_days}
@@ -73,7 +74,7 @@ describe('Details modal dispatch id and Selected Model dispatch id', () => {
           heavyWaste={data[data.length - 1].allows_heavy_waste}
           onRoad={data[data.length - 1].allowed_on_road}
         />
-      </Provider>
+      </Provider>,
     );
   });
   it('details dispatch id', () => {
@@ -81,8 +82,8 @@ describe('Details modal dispatch id and Selected Model dispatch id', () => {
     expect(detailButton).toBeInTheDocument();
     detailButton.click();
     const actions = store.getActions();
-    const detailAction = actions.find(action => action.type === 'skipData/setModelDetail');
-    const modelAction = actions.find(action => action.type === 'skipData/toggleModelView');
+    const detailAction = actions.find((action) => action.type === 'skipData/setModelDetail');
+    const modelAction = actions.find((action) => action.type === 'skipData/toggleModelView');
     expect(modelAction).toBeDefined();
     expect(detailAction).toBeDefined();
     expect(detailAction.payload).toEqual(data[data.length - 1].id);
@@ -93,8 +94,8 @@ describe('Details modal dispatch id and Selected Model dispatch id', () => {
     expect(selectButton).toBeInTheDocument();
     selectButton.click();
     const actions = store.getActions();
-    const selectAction = actions.find(action => action.type === 'skipData/setSelectedSkip');
-    const modelAction = actions.find(action => action.type === 'skipData/toggleModelView');
+    const selectAction = actions.find((action) => action.type === 'skipData/setSelectedSkip');
+    const modelAction = actions.find((action) => action.type === 'skipData/toggleModelView');
     expect(modelAction).toBeDefined();
     expect(selectAction).toBeDefined();
     expect(selectAction.payload).toEqual(data[data.length - 1].id);
