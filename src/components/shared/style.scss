@@ -1,86 +1,96 @@
 @import '../../index.scss';
 
 .backdrop-container {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba($primary-color-lighter, 0.2);
-    min-height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba($primary-color-lighter, 0.2);
+  min-height: 100vh;
 }
 
-
 .model {
+  @include flex-column;
+
+  padding: 1rem;
+  background-color: $black-dark;
+  width: 80%;
+  position: relative;
+  height: 85vh;
+  overflow: scroll;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .img-wrapper {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .description-container {
     @include flex-column;
-    padding: 1rem;
-    background-color: $black-dark;
-    width: 80%;
-    position: relative;
-    height: 90vh;
-    overflow: scroll;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    .img-wrapper {
-        width: 100%;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+
+    width: 100%;
+
+    .title,
+    li {
+      @include flex-row;
+
+      justify-content: space-between;
     }
-    
-    .description-container {
-        @include flex-column;
-        width: 100%;
-        .title, li {
-            @include flex-row;
-            justify-content: space-between;
-        }
-        
-        .title {
-            padding: 1rem 0;
-            border-bottom: 1px solid $black-lighter;
-            h2 {
-                color: $primary-color;
-            }
-        }
-        
-        p {
-            padding: 1rem 0;
-            border-bottom: 1px solid $black-lighter;
-        }
-        
-        ul {
-            padding: 1rem 0;
-            li {
-                padding: 1rem 0;
-                margin: .5rem 0;
-                border-bottom: 1px solid $black-lighter;
-            }
-        }
-        
-        .highlighted-feature {
-            border: 1px solid $primary-color;
-            padding: 1rem;
-            li {
-                padding:0;
-                border: none;
-            }
-        }
+
+    .title {
+      padding: 1rem 0;
+      border-bottom: 1px solid $black-lighter;
+
+      h2 {
+        color: $primary-color;
+      }
     }
+
+    p {
+      padding: 1rem 0;
+      border-bottom: 1px solid $black-lighter;
+    }
+
+    ul {
+      padding: 1rem 0;
+
+      li {
+        padding: 1rem 0;
+        margin: 0.5rem 0;
+        border-bottom: 1px solid $black-lighter;
+      }
+    }
+
+    .highlighted-feature {
+      border: 1px solid $primary-color;
+      padding: 1rem;
+
+      li {
+        padding: 0;
+        border: none;
+      }
+    }
+  }
 }
 
 .model::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-@media screen and (min-width: 769px) {
-    .model {
-        flex-direction: row;
-        gap: 1rem;
-        height: 90vh;
-    }
 
-    .description-container {
-        width: 50%;
-    }
+@media screen and (min-width: 769px) {
+  .model {
+    flex-direction: row;
+    gap: 1rem;
+    height: 85vh;
+  }
+
+  .description-container {
+    width: 50%;
+  }
 }

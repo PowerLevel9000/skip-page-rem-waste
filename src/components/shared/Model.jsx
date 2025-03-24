@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import dump from '../../static/dumpyard.jpg';
 import './style.scss';
-import { toggleModelView } from '../../redux/skip-slice/skipDataSlice';
+import { setSelectedSkip, toggleModelView } from '../../redux/skip-slice/skipDataSlice';
 
 const Model = ({ id }) => {
   const dispatch = useDispatch();
@@ -82,7 +82,7 @@ const Model = ({ id }) => {
           </ul>
           <div className="buttons">
             <button type="button" onClick={handleClose}>close</button>
-            <button type="button">{skipByUser === id ? 'selected' : 'select'}</button>
+            <button type="button" onClick={() => { dispatch(setSelectedSkip(selectedSkip.id)); }}>{skipByUser === id ? 'selected' : 'select'}</button>
           </div>
         </div>
       </div>

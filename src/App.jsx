@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import './App.scss';
 import SkipCard from './components/skip-card/SkipCard';
 import Model from './components/shared/Model';
+import Overlay from './components/shared/overlay/Overlay';
 
 function App() {
   const { skipData, selectedSkip, detail } = useSelector((state) => state.skipData);
@@ -31,6 +32,8 @@ function App() {
         ))}
       </div>
       <Model id={detail || selectedSkip} />
+      {selectedSkip && <Overlay />}
+      <footer>All rights reserve under @REM-waste</footer>
     </section>
   );
 }
