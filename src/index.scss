@@ -4,7 +4,8 @@ $primary-color-lighter: #2698e4;
 $black-dark: #000;
 $black-lighter: #333;
 $text-color: #fff;
-$secondary-color: #2ecc71;
+$secondary-color: #048b3d;
+$warning-color: #f84545;
 $font-stack: 'Helvetica Neue', sans-serif;
 $base-font-size: 16px;
 
@@ -15,11 +16,52 @@ $base-font-size: 16px;
   align-items: center;
 }
 
-@mixin button-styles {
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@mixin border-card($border-radius: 5px) {
+  border: 1px solid $black-lighter;
+  border-radius: $border-radius;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+  background-color: $black-dark;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: $black-lighter;
+  border-radius: 10px;
+}
+
+.perfect {
+  color: $secondary-color;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.warning {
+  color: $warning-color;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@mixin button-styles($bgColor) {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: $primary-color;
+  background-color: $bgColor;
   color: $text-color;
   font-size: 16px;
   cursor: pointer;
@@ -27,7 +69,7 @@ $base-font-size: 16px;
   @include transition(background-color, 0.3s);
 
   &:hover {
-    background-color: $primary-color-lighter;
+    background-color: rgba($bgColor, 0.8);
   }
 }
 
@@ -40,11 +82,22 @@ $base-font-size: 16px;
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
 body {
   font-family: $font-stack;
   font-size: $base-font-size;
-  color: $primary-color;
-  background-color: #ecf0f1;
+  color: $text-color;
+  background-color: $black-dark;
   margin: 0;
   padding: 0;
 }
@@ -58,4 +111,14 @@ a {
   &:hover {
     color: $secondary-color;
   }
+}
+
+button {
+  border: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

@@ -1,0 +1,44 @@
+@import '../../../index.scss';
+
+.overlay {
+  background-color: $primary-color;
+  position: fixed;
+  padding: 0;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+
+  @include flex-row;
+
+  justify-content: space-between;
+
+  div {
+    @include flex-row;
+
+    justify-content: space-around;
+    flex-grow: 1;
+    padding: 1rem;
+  }
+
+  button {
+    @include button-styles($secondary-color);
+
+    color: $text-color;
+    font-weight: 700;
+    font-size: large;
+    flex-grow: 1;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .overlay {
+    div {
+      flex-grow: 3;
+    }
+
+    button {
+      flex-grow: 2;
+    }
+  }
+}
