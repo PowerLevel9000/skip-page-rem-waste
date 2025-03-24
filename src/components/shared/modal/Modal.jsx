@@ -73,12 +73,10 @@ const Model = ({ id }) => {
             )}
           </ul>
           <ul className="highlighted-feature">
-            <li>
-              {selectedSkip.allows_heavy_waste ? 'perfect for heavy waste' : "heavy can't dump here"}
-            </li>
-            <li>
-              {selectedSkip.allowed_on_road ? 'on road facility available' : 'on road facility not available'}
-            </li>
+            {selectedSkip.allows_heavy_waste ? (<li className="perfect">perfect for heavy waste</li>)
+              : (<li className="warning">heavy can&apos;t dump here</li>)}
+            {selectedSkip.allowed_on_road ? (<li className="perfect">on road facility available</li>)
+              : (<li className="warning">on road facility not available</li>)}
           </ul>
           <div className="buttons">
             <button type="button" onClick={handleClose}>close</button>

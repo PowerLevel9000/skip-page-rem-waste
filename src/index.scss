@@ -5,6 +5,7 @@ $black-dark: #000;
 $black-lighter: #333;
 $text-color: #fff;
 $secondary-color: #048b3d;
+$warning-color: #f84545;
 $font-stack: 'Helvetica Neue', sans-serif;
 $base-font-size: 16px;
 
@@ -40,6 +41,20 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
   background-color: $black-lighter;
   border-radius: 10px;
+}
+
+.perfect {
+  color: $secondary-color;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.warning {
+  color: $warning-color;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 @mixin button-styles($bgColor) {
