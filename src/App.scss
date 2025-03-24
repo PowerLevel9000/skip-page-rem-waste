@@ -31,6 +31,22 @@
   padding: 1rem;
 }
 
+.buttons {
+  @include flex-row;
+
+  justify-content: space-between;
+  background-color: grey;
+  padding: 10px;
+
+  button:nth-child(1) {
+    @include button-styles($black-lighter);
+  }
+
+  button:nth-child(2) {
+    @include button-styles($primary-color);
+  }
+}
+
 @media screen and (min-width: 425px) {
   .skip-container {
     flex-direction: row;

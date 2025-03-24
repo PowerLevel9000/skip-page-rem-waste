@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { setSelectedSkip, setModelDetail } from '../../redux/skip-slice/skipDataSlice';
+import { setSelectedSkip, setModelDetail, toggleModelView } from '../../redux/skip-slice/skipDataSlice';
 import yard from '../../static/dumpyard.jpg';
 import './style.scss';
 
@@ -68,8 +68,24 @@ const SkipCard = ({
         )}
       </ul>
       <div className="buttons">
-        <button type="button" onClick={() => dispatch(setModelDetail(id))}>Details</button>
-        <button type="button" onClick={() => dispatch(setSelectedSkip(id))}>{selected === id ? 'selected' : 'select'}</button>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(toggleModelView());
+            dispatch(setModelDetail(id));
+          }}
+        >
+          Details
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(toggleModelView());
+            dispatch(setSelectedSkip(id));
+          }}
+        >
+          {selected === id ? 'selected' : 'select'}
+        </button>
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
 import './App.scss';
 import SkipCard from './components/skip-card/SkipCard';
+import Model from './components/shared/Model';
 
 function App() {
-  const { skipData, selectedSkip } = useSelector((state) => state.skipData);
+  const { skipData, selectedSkip, detail } = useSelector((state) => state.skipData);
   return (
-    <>
+    <section className="skip-section">
       <div className="top-heading">
         <h1>Choose Your Skip Size</h1>
         <p data-testid="description">Select the skip size that best suits your needs</p>
@@ -29,8 +30,8 @@ function App() {
           />
         ))}
       </div>
-      {selectedSkip && <div className="selected-skip-container">{selectedSkip}</div>}
-    </>
+      <Model id={detail || selectedSkip} />
+    </section>
   );
 }
 
