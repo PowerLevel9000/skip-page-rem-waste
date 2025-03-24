@@ -57,13 +57,19 @@ const SkipCard = ({
         {transportCost > 0 && (
           <li>
             Transport Cost
-            <span>{transportCost}</span>
+            <span>
+              {transportCost}
+              £
+            </span>
           </li>
         )}
         {perTonneCost > 0 && (
           <li>
             Per Tonne Cost
-            <span>{perTonneCost}</span>
+            <span>
+              {perTonneCost}
+              £
+            </span>
           </li>
         )}
       </ul>

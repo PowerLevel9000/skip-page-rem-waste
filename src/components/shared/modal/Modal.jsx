@@ -44,7 +44,10 @@ const Model = ({ id }) => {
           <ul>
             <li>
               Price
-              <span>{selectedSkip.price_before_vat}</span>
+              <span>
+                {selectedSkip.price_before_vat}
+                £
+              </span>
             </li>
             <li>
               VAT
