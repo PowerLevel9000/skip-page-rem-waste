@@ -1,70 +1,195 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
+<div align="center">
+  <img src="./documentation/image.png" alt="logo" width="140"  height="auto" />
+  <br/>
+  <h1><b>Skip Page REM Waste</b><br><br></h1>
+ </div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <h1>App Mock</h1>
+  <img src="./documentation/all-devices-black.png" alt="logo" width="100%"  height="auto" />
+  <img src="./documentation/desktop.png" alt="logo" width="100%"  height="auto" />
+</div>
+<br>
+<br>
+<br>
+<!-- TABLE OF CONTENTS -->
 
-## Available Scripts
+# 📗 Table of Contents
 
-In the project directory, you can run:
+- [📖 About the Project](#about-project)
+  - [🧪 Linters And test](#linters)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [🧑‍💻 Credits ](#credit)
+- [📝 License](#license)
 
-### `npm start`
+<!-- PROJECT DESCRIPTION -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 📖 REM Waste Skip Page <a name="about-project"></a>
+**REM Waste Skip Page** Welcome to the REM Waste Skip Page! 
+here you can see the details of the skip, price and resources we are offering
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧪 Linters And test <a name="linters"></a>
+[![Linters](https://github.com/PowerLevel9000/skip-page-rem-waste/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/skip-page-rem-waste/actions/workflows/linters.yml)
 
-### `npm test`
+## 🛠 Built With <a name="built-with"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tech Stack <a name="tech-stack"></a>
 
-### `npm run build`
+> In this project I used many skills, tech and libraries
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details>
+  <summary>Markup</summary>
+  <ul>
+    <li><a href="https://html.com">HTML</a></li>
+  </ul>
+</details>
+<details>
+  <summary>Styling</summary>
+  <ul>
+    <li><a href="https://sass-lang.com/">SASS</a></li>
+  </ul>
+</details>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- Features -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Key Features <a name="key-features"></a>
 
-### `npm run eject`
+> Following features you should observe
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **you can see various skips listed on home page**
+- **You can  see the pop up details**
+- **you can see and select the skip**
+- **based on selection continue overlay displayed**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- GETTING STARTED -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 💻 Getting Started <a name="getting-started"></a>
 
-## Learn More
+>For having local file and project you can fork this repo 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+>And for making changes you you should follow prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Prerequisites
+To edit this project you need:
+ - Node.js installed
+ - A Terminal 
+ - A web browser
+ - An IDE
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ - suggested IDE
+   - visual studio code
+   - atom 
+   - visual code 
 
-### Analyzing the Bundle Size
+### Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Clone this repository to your desired folder:
 
-### Making a Progressive Web App
+ - And run `npm i` in root dir <small>to install node modules</small>
+ - Then run `npm run dev` or `npm start`
+ - All this makes our project open  in the browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ Execute the following thing:
+ 
+- Select Skip based on price
+
+
+### Run tests And Linter
+
+- To run all test cases you need to run `npm run test` in the root dir 
+- Linters for files run in the root dir
+  - `npx eslint "**/*.{js,jsx}` for JS or JSX linting
+  - `npx stylelint "**/*.{css,scss}"`for CSS or SCSS linting
+  - `--fix` flag for instant fixable fix
+ 
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You can deploy this project using:
+- Fork our Repo and clone it or download `zip` and extract it
+- Edit some changes
+- Run `npm run build` to make our project production ready
+- deploy it using [GitHub](www.github.com) pages 
+- or use Netlify or Render
+ 
 
-### `npm run build` fails to minify
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+
+👤 **Adarsh Pathak**
+
+- GitHub: [@PowerLevel9000](https://github.com/githubhandle)
+- Twitter: [@PowerLevel9002](https://twitter.com/PowerLevel9002?t=AIuSN7mTxk5a_MWpLolEjA&s=09)
+- LinkedIn: [@Adarsh Pathak](https://www.linkedin.com/in/adarsh-pathak-56a831256/)
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Description 1 - 3 features that will be added to the project.
+
+- [ ] **Search Feature**
+- [ ] **Grind an list theme listing**
+- [ ] **Stats chart of skip selected like skip handling efficiency and management**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/PowerLevel9000/skip-page-rem-waste/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like my Project give it a Star ✨🌟
+or
+<br />
+
+[![BuyMeACoffee](https://img.shields.io/badge/Buy%Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/adi8090808E)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>) </p>
