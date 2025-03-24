@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import dump from '../../static/dumpyard.jpg';
+import dump from '../../../static/dumpyard.jpg';
 import './style.scss';
-import { setSelectedSkip, toggleModelView } from '../../redux/skip-slice/skipDataSlice';
+import { setSelectedSkip, toggleModelView } from '../../../redux/skip-slice/skipDataSlice';
 
 const Model = ({ id }) => {
   const dispatch = useDispatch();

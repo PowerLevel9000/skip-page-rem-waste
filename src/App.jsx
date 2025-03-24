@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import './App.scss';
 import SkipCard from './components/skip-card/SkipCard';
-import Model from './components/shared/Model';
+import Model from './components/shared/modal/Modal';
 import Overlay from './components/shared/overlay/Overlay';
 
 function App() {
